@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="res.service.utils" id="data_cat_serv_1">
+            <field name="subservs">Corporal</field>
+        </record>
+        <record model="res.service.utils" id="data_cat_serv_2">
+            <field name="subservs">Depilación</field>
+        </record>
+        <record model="res.service.utils" id="data_cat_serv_3">
+            <field name="subservs">Facial</field>
+        </record>
+        <record model="res.service.utils" id="data_cat_serv_4">
+            <field name="subservs">Fisioterapia/Osteopatia</field>
+        </record>
+        <record model="res.partner.utils" id="data_cat_serv_5">
+            <field name="catservs">Nutrición</field>
+        </record>
+        <record model="res.partner.utils" id="data_cat_serv_6">
+            <field name="catservs">Wellness</field>
+        </record>
+
+    </data>
+</odoo>

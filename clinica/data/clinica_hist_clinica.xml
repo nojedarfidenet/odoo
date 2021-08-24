@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="res.partner.cuestionario" id="data_category_cuest_1">
+            <field name="preg">¿Está recibiendo algún tratamiento médico o toma algún medicamento?</field>
+            <!--<field name="sex"></field>-->
+            <field name="active">True</field>
+        </record>
+        <record model="res.partner.cuestionario" id="data_category_cuest_2">
+            <field name="preg">¿Tiene usted alergia a algún medicamento, alimento o sustancia?</field>
+            <!--<field name="sex"></field>-->
+            <field name="active">True</field>
+        </record>
+        <record model="res.partner.cuestionario" id="data_category_cuest_3">
+            <field name="preg">¿Lleva usted algún marcapasos o válvula cardiaca?</field>
+            <!--<field name="sex"></field>-->
+            <field name="active">True</field>
+        </record>
+        <record model="res.partner.cuestionario" id="data_category_cuest_4">
+            <field name="preg">¿Eres fumador?</field>
+            <!--<field name="sex"></field>-->
+            <field name="active">True</field>
+        </record>
+        <record model="res.partner.cuestionario" id="data_category_cuest_5">
+            <field name="preg">¿Ha sido hospitalizado alguna vez?, cuando y porqué?</field>
+            <!--<field name="sex"></field>-->
+            <field name="active">True</field>
+        </record>
+        <record model="res.partner.cuestionario" id="data_category_cuest_6">
+            <field name="preg">¿Ha padecido o padece algún proceso oncológico?</field>
+            <!--<field name="sex"></field>-->
+            <field name="active">True</field>
+        </record>
+        <record model="res.partner.cuestionario" id="data_category_cuest_7">
+            <field name="preg">¿Ha tenido usted algún procedimiento quirúrgico?</field>
+            <!--<field name="sex"></field>-->
+            <field name="active">True</field>
+        </record>
+        <record model="res.partner.cuestionario" id="data_category_cuest_8">
+            <field name="preg">Si hay algún otro aspecto de su historia médica que no hayamos preguntado y usted considera que es importante para nosotros díganos</field>
+            <!--<field name="sex"></field>-->
+            <field name="active">True</field>
+        </record>
+        <record model="res.partner.cuestionario" id="data_category_cuest_9">
+            <field name="preg">¿Embarazada o sospechas que puedes estarlo?</field>
+            <!--<field name="sex"></field>-->
+            <field name="active">True</field>
+        </record>
+        <record model="res.partner.cuestionario" id="data_category_cuest_10">
+            <field name="preg">¿En periodo de lactancia?</field>
+            <!--<field name="sex"></field>-->
+            <field name="active">True</field>
+        </record>
+
+    </data>
+</odoo>

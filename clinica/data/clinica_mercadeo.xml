@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="res.partner.category" id="data_category_mercadeo_1">
+            <field name="name">Amig@s</field>
+            <field name="active">True</field>
+            <field name="parent_id"></field>
+        </record>
+        <record model="res.partner.category" id="data_category_mercadeo_2">
+            <field name="name">Facebook</field>
+            <field name="active">True</field>
+            <field name="parent_id"></field>
+        </record>
+        <record model="res.partner.category" id="data_category_mercadeo_3">
+            <field name="name">Familia</field>
+            <field name="active">True</field>
+            <field name="parent_id"></field>
+        </record>
+        <record model="res.partner.category" id="data_category_mercadeo_4">
+            <field name="name">Google</field>
+            <field name="active">True</field>
+            <field name="parent_id"></field>
+        </record>
+        <record model="res.partner.category" id="data_category_mercadeo_5">
+            <field name="name">Instagram</field>
+            <field name="active">true</field>
+            <field name="parent_id"></field>
+        </record>
+        <record model="res.partner.category" id="data_category_mercadeo_6">
+            <field name="name">Página Web</field>
+            <field name="active">True</field>
+            <field name="parent_id"></field>
+        </record>
+
+    </data>
+</odoo>
