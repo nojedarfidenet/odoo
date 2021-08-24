@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_partner_data_form" model="ir.ui.view">
+        <field name="name">res.partner.cogitig.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='street']" position="before">
+                <field name="fdn" attrs="{'invisible': [('is_company','=',True)]}"/>
+                <field name="edad" attrs="{'invisible': [('is_company','=',True)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="before">
+                <field name="num_colegiado"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="string">Identificación</attribute>
+                <attribute name="placeholder">Número de: NIF | DNI | NIE</attribute>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="estado"/>
+            </xpath>
+            <xpath expr="//field[@name='function']" position="before">
+                <field name="fecha_alta"/>
+                <field name="fecha_baja"/>
+            </xpath>
+            <xpath expr="//field[@name='title']" position="replace">
+                <field name="title" invisible="1"/>
+            </xpath>
+            <xpath expr="//page[@name='sales_purchases']//field[@name='user_id']" position="after">
+                <field name="metodo_pago"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="contract_template_line_form_view_cogitig_sale" model="ir.ui.view">
+        <field name="name">contract.template.line.cogitig in sale</field>
+        <field name="model">contract.abstract.contract.line</field>
+        <field name="inherit_id" ref="contract_sale.contract_abstract_contract_line_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='price_unit']" position="after">
+                <field colspan="2" name="is_prorate"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="contract_contract_form_view_cogitig" model="ir.ui.view">
+        <field name="name">contract.contract.form.contract.cogitig</field>
+        <field name="model">contract.contract</field>
+        <field name="inherit_id" ref="contract.contract_contract_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='contract_line_ids']/tree/field[@name='price_unit']" position="before">
+                <field name="is_prorate"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
