@@ -1,0 +1,36 @@
+<template>
+    <div t-name="TimelineView" class="o_timeline_container">
+        <div class="o_timeline_widget">
+        </div>
+    </div>
+
+    <t t-name="TimelineView.item">
+        <div class="o_fields">
+            <t t-as="name" t-foreach="widget.displayFields">
+                <div t-attf-class="o_field_#{name} o_field_type_#{fields[name].type}">
+                    <t t-esc="format(record, name)"/>
+                </div>
+            </t>
+        </div>
+    </t>
+
+    <t t-name="TimelineView.buttons">
+        <div class="oe_timeline_buttons">
+            <button class="o_timeline_button_prev btn btn-primary">
+                <span class="fa fa-arrow-left"></span>
+            </button>
+            <button class="o_timeline_button_today btn btn-primary">Today</button>
+            <button class="o_timeline_button_next btn btn-primary">
+                <span class="fa fa-arrow-right"></span>
+            </button>
+            <div class="btn-group">
+                <button class="o_timeline_button_day btn btn-secondary" type="button" value="day">Day</button>
+                <button class="o_timeline_button_week btn btn-secondary" type="button" value="week">Week</button>
+                <button class="o_timeline_button_month btn btn-secondary active" type="button" value="month">Month</button>
+                <button class="o_timeline_button_year btn btn-secondary" type="button" value="year">Year</button>
+            </div>
+        </div>
+    </t>
+</template>
+
+
