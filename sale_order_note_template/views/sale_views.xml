@@ -1,0 +1,22 @@
+<odoo>
+    <record model="ir.ui.view" id="view_order_form_terms_template">
+        <field name="name">sale_order_note_templatesale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Texto personalizado">
+                    <group string="Texto de Encabezado">
+                        <field name="terms_template_id_head" string="Seleccione la plantilla" domain="[('block','=','head')]"/>
+                    </group>
+                    <group string="Texto de Cuerpo">
+                        <field name="terms_template_id_block" string="Seleccione la plantilla" domain="[('block','=','body')]"/>
+                    </group>
+                    <group string="Terminos y Condiciones">
+                        <field name="terms_template_id_terms" string="Seleccione la plantilla" domain="[('block','=','terms')]"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
