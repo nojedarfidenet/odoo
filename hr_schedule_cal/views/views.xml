@@ -1,0 +1,97 @@
+<odoo>
+  <data>
+
+    <!--  ~~~~~~~~~~~~~~~~~ List VIEW ~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <record id="hr_schedule_cal.list" model="ir.ui.view">
+      <field name="name">Lista de Horario de Emleados</field>
+      <field name="model">hr.schedule.cal</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="employee_id"/>
+          <field name="fecha_inicio"/>
+          <field name="duracion" widget="float_time"/>
+        </tree>
+      </field>
+    </record>
+
+    <!--  ~~~~~~~~~~~~~~~~~ Calendar VIEW ~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <record id="hr_schedule_cal.cal" model="ir.ui.view">
+        <field name="name">Calendario de Horarios de Empleados</field>
+        <field name="model">hr.schedule.cal</field>
+        <field name="priority" eval="2"/>
+        <field name="arch" type="xml">
+            <calendar string="Vista de calendario" date_start="fecha_inicio" date_delay="duracion" color="employee_id" >
+            </calendar>
+        </field>
+    </record>
+
+    <!--  ~~~~~~~~~~~~~~~~~ Pivot VIEW ~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <record id="hr_schedule_cal.piv" model="ir.ui.view">
+        <field name="name">Tabla de Analisis de Pivot</field>
+        <field name="model">hr.schedule.cal</field>
+         <field name="arch" type="xml">
+             <pivot string="Analisis" stacked="True">
+
+             </pivot>
+         </field>
+    </record>
+
+    <!--  ~~~~~~~~~~~~~~~~~ Graph VIEW ~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <record id="hr_schedule_cal.graph" model="ir.ui.view">
+        <field name="name">Analisis Grafico</field>
+        <field name="model">hr.schedule.cal</field>
+        <field name="arch" type="xml">
+            <graph string="Analisis" type="bar" stacked="True">
+
+            </graph>
+        </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record id="hr_schedule_cal.action_window" model="ir.actions.act_window">
+      <field name="name">Horario de Empleados</field>
+      <field name="res_model">hr.schedule.cal</field>
+      <field name="view_mode">calendar,tree,graph,pivot</field>
+    </record>
+
+    <!-- server action to the one above -->
+
+<!--    <record model="ir.actions.server" id="hr_schedule_cal.action_server">-->
+<!--      <field name="name">hr_schedule_cal server</field>-->
+<!--      <field name="model_id" ref="model_hr_schedule_cal_hr_schedule_cal"/>-->
+<!--      <field name="state">code</field>-->
+<!--      <field name="code">-->
+<!--        action = {-->
+<!--          "type": "ir.actions.act_window",-->
+<!--          "view_mode": "tree",-->
+<!--          "res_model": self._name,-->
+<!--        }-->
+<!--      </field>-->
+<!--    </record>-->
+
+
+    <!-- Top menu item -->
+
+    <menuitem id="hr_schedule_cal.menu_root"
+              parent="hr.menu_hr_root"
+              name="Horario de Empleados"
+              sequence="60"
+              action="hr_schedule_cal.action_window"/>
+
+    <!-- menu categories -->
+
+<!--    <menuitem id="hr_schedule_cal.menu_1" parent="hr_schedule_cal.menu_root" action="hr_schedule_cal.action_window"/>-->
+
+<!--    <menuitem name="Menu 2" id="hr_schedule_cal.menu_2" parent="hr_schedule_cal.menu_root"/>-->
+
+    <!-- actions -->
+
+<!--    <menuitem name="List" id="hr_schedule_cal.menu_1_list" parent="hr_schedule_cal.menu_1"-->
+<!--              action="hr_schedule_cal.action_window"/>-->
+
+<!--    <menuitem name="Server to list" id="hr_schedule_cal" parent="hr_schedule_cal.menu_2"-->
+<!--              action="hr_schedule_cal.action_server"/>-->
+
+  </data>
+</odoo>

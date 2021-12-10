@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="assets_backend" name="custom calendar" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/hr_schedule_cal/static/js/custom_cal.js"></script>
+        </xpath>
+    </template>
+</odoo>
+
