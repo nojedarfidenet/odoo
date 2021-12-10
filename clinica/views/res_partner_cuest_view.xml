@@ -1,0 +1,48 @@
+<odoo>
+    <!-- Vista de Formulario-->
+    <record id="view_partner_cuest_form" model="ir.ui.view">
+        <field name="name">res.partner.cuestionario.form</field>
+        <field name="model">res.partner.cuestionario</field>
+        <field name="arch" type="xml">
+            <form string="Cuestionario">
+                <group col="3">
+                    <field name="preg"/>
+                    <field name="active"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <!-- Vista de Arbol-->
+    <record id="view_partner_cuest_list" model="ir.ui.view">
+        <field name="name">res.partner.cuestionario.list</field>
+        <field name="model">res.partner.cuestionario</field>
+        <field eval="6" name="priority"/>
+        <field name="arch" type="xml">
+            <tree string="Cuestionario">
+                <field name="preg"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    <!-- Accion ..-->
+    <record id="action_partner_cuest_form" model="ir.actions.act_window">
+        <field name="name">action.res.partner.cuestionario</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner.cuestionario</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crear una pregunta
+            </p>
+            <p>
+                Administre las preguntas
+            </p>
+        </field>
+    </record>
+
+    <!-- actions menu -->
+
+    <menuitem name="Historia clinica" id="menu_preguntas" parent="sale.menu_sale_config" sequence="15"
+              action="action_partner_cuest_form"/>
+
+</odoo>

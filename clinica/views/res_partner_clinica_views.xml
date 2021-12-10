@@ -1,0 +1,54 @@
+<odoo>
+    <record model="ir.ui.view" id="view_partner_data_form">
+        <field name="name">res.partner.clinica.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='street']" position="before">
+                <field name="fdn"/>
+                <field name="edad"/>
+                <field name="sex"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="replace"/>
+            <xpath expr="//field[@name='sex']" position="after">
+                <field name="vat"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="string">Identificación</attribute>
+                <attribute name="placeholder">Número de: DNI | NIE | TIE | Pasaporte</attribute>
+            </xpath>
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="string">Profesión</attribute>
+                <attribute name="placeholder"/>
+            </xpath>
+            <xpath expr="//field[@name='title']" position="replace"/>
+            <xpath expr="//field[@name='fdn']" position="before">
+                <field name="title"/>
+            </xpath>
+            <!-- <xpath expr="//label[@for='street']" position="before"> -->
+            <xpath expr="//group[1]//group[1]//div[1]" position="after">
+                <field name="lpd" string="Autorización LPD" help="Ley de Protección de Datos"/>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='function']" position="replace">
+                <field name="function" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='title']" position="replace">
+                <field name="title" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="after">
+                <field name="pare"/>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="attributes">
+                <attribute name="string">¿Cómo nos ha conocido?</attribute>
+                <attribute name="placeholder">Amig@s, Familia, ...</attribute>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="servs_id" widget="many2many_checkboxes" options="{}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!--<record model="ir.ui.menu" id="contacts.menu_partner_category_form">
+        <field name='name'>Medios</field>
+    </record>-->
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- partner form view inherited -->
+    <record id="ir_attachment_form" model="ir.ui.view">
+        <field name="name">view.ir.attachment.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field eval="1" name="priority"/>
+
+        <field name="arch" type="xml">
+            <data>
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button"
+                            icon="fa-file-text-o"
+                            name="action_get_attachment_tree_view"
+                            type="object">
+                        <field name="count_doct" widget="statinfo" string="Documentos"/>
+                    </button>
+                </div>
+            </data>
+        </field>
+    </record>
+</odoo>

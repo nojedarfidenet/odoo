@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_partner_servicio_form" model="ir.ui.view">
+        <field name="name">res.partner.servicios.form</field>
+        <field name="model">res.partner.servicios</field>
+        <field name="arch" type="xml">
+            <form string="Servicios">
+                <group col="4">
+                    <field name="name"/>
+                    <field name="sname"/>
+                    <field name="activo"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_partner_servicio_list" model="ir.ui.view">
+        <field name="name">res.partner.servicios.list</field>
+        <field name="model">res.partner.servicios</field>
+        <field eval="6" name="priority"/>
+        <field name="arch" type="xml">
+            <tree string="Servicios">
+                <field name="name"/>
+                <field name="sname"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_partner_servicios_form" model="ir.actions.act_window">
+        <field name="name">action.res.partner.sevicios</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner.servicios</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crear un servicio
+            </p>
+            <p>
+                Administre los servicios
+            </p>
+        </field>
+    </record>
+
+    <!-- actions menu -->
+
+    <menuitem name="Servicios" id="menu_servicios" parent="sale.menu_sale_config" sequence="10"
+              action="action_partner_servicios_form"/>
+
+</odoo>
